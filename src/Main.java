@@ -1,7 +1,9 @@
-import Dispositivos.Inventario;
+import Dispositivos.UIDispositivo;
 
 public class Main {
     public static void main(String[] args) {
-        //main aqui <<--
+        //TODO
+        UIDispositivo ui = new UIDispositivo();
+        ui.run();
     }
 }

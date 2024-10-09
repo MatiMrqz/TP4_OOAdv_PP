@@ -5,7 +5,6 @@ import Almacen.Vehiculo;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class Inventario implements Serializable {
     private static final String persistenceFolder = "inventario";
@@ -16,8 +15,10 @@ public class Inventario implements Serializable {
         this.marca = marca;
     }
 
-    public void agregar(Vehiculo vehiculo){
-        this.item.add(vehiculo);
+    public Vehiculo agregar(int peso){
+        Vehiculo v = new Vehiculo(peso);
+        this.item.add(v);
+        return v;
     }
 
     public void listar(){
@@ -54,6 +55,11 @@ public class Inventario implements Serializable {
         } catch (Exception e){
             System.err.println(e.getMessage());
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.marca;
     }
 
 }
